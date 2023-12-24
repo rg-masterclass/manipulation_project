@@ -65,33 +65,33 @@ int main(int argc, char **argv) {
   move_group_gripper.execute(my_plan_gripper);
 
   // Home
-//   RCLCPP_INFO(LOGGER, "Home Position");
+  //   RCLCPP_INFO(LOGGER, "Home Position");
 
-//   geometry_msgs::msg::Pose home_pose;
-//   home_pose.orientation.x = 0.635;
-//   home_pose.orientation.y = -0.629;
-//   home_pose.orientation.z = 0.310;
-//   home_pose.orientation.w = -0.323;
-//   home_pose.position.x = 0.045;
-//   home_pose.position.y = 0.133;
-//   home_pose.position.z = 0.490;
+  //   geometry_msgs::msg::Pose home_pose;
+  //   home_pose.orientation.x = 0.635;
+  //   home_pose.orientation.y = -0.629;
+  //   home_pose.orientation.z = 0.310;
+  //   home_pose.orientation.w = -0.323;
+  //   home_pose.position.x = 0.045;
+  //   home_pose.position.y = 0.133;
+  //   home_pose.position.z = 0.490;
 
-//   move_group_arm.setPoseTarget(home_pose);
+  //   move_group_arm.setPoseTarget(home_pose);
 
-//   success_arm = (move_group_arm.plan(my_plan_arm) ==
-//                  moveit::core::MoveItErrorCode::SUCCESS);
+  //   success_arm = (move_group_arm.plan(my_plan_arm) ==
+  //                  moveit::core::MoveItErrorCode::SUCCESS);
 
-//   move_group_arm.execute(my_plan_arm);
+  //   move_group_arm.execute(my_plan_arm);
 
-    // - Translation: [0.344, -0.020, 0.244]
-    // - Rotation: in Quaternion [0.735, -0.678, 0.004, -0.017]
-    // - Rotation: in RPY (radian) [-3.111, 0.018, -1.489]
-    // - Rotation: in RPY (degree) [-178.257, 1.051, -85.332]
-    // - Matrix:
-    // 0.081 -0.996  0.029  0.344
-    // -0.997 -0.081  0.021 -0.020
-    // -0.018 -0.030 -0.999  0.244
-    // 0.000  0.000  0.000  1.000
+  // - Translation: [0.344, -0.020, 0.244]
+  // - Rotation: in Quaternion [0.735, -0.678, 0.004, -0.017]
+  // - Rotation: in RPY (radian) [-3.111, 0.018, -1.489]
+  // - Rotation: in RPY (degree) [-178.257, 1.051, -85.332]
+  // - Matrix:
+  // 0.081 -0.996  0.029  0.344
+  // -0.997 -0.081  0.021 -0.020
+  // -0.018 -0.030 -0.999  0.244
+  // 0.000  0.000  0.000  1.000
 
   // Pregrasp
   RCLCPP_INFO(LOGGER, "Pregrasp Position");
@@ -101,8 +101,8 @@ int main(int argc, char **argv) {
   target_pose1.orientation.y = 0.000;
   target_pose1.orientation.z = 0.000;
   target_pose1.orientation.w = 0.000;
-  target_pose1.position.x = 0.34; // 3
-  target_pose1.position.y = -0.02;
+  target_pose1.position.x = 0.343; // sim: 0.34;
+  target_pose1.position.y = 0.132; // sim: -0.02;
   target_pose1.position.z = 0.244;
   move_group_arm.setPoseTarget(target_pose1);
 
@@ -155,9 +155,9 @@ int main(int argc, char **argv) {
 
   // Retreat
 
-//   RCLCPP_INFO(LOGGER, "Retreat from object!");
+  //   RCLCPP_INFO(LOGGER, "Retreat from object!");
 
-   std::this_thread::sleep_for (std::chrono::seconds(1));
+  std::this_thread::sleep_for(std::chrono::seconds(1));
 
   std::vector<geometry_msgs::msg::Pose> retreat_waypoints;
 
