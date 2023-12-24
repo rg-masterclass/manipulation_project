@@ -103,7 +103,7 @@ int main(int argc, char **argv) {
   target_pose1.orientation.w = 0.000;
   target_pose1.position.x = 0.343; // sim: 0.34;
   target_pose1.position.y = 0.132; // sim: -0.02;
-  target_pose1.position.z = 0.244;
+  target_pose1.position.z = 0.264;
   move_group_arm.setPoseTarget(target_pose1);
 
   success_arm = (move_group_arm.plan(my_plan_arm) ==
